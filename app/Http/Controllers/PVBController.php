@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\pvb;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class PVBController extends Controller
 {
@@ -14,7 +16,9 @@ class PVBController extends Controller
      */
     public function index()
     {
-        //
+        $pvbs = DB:: table('pvbs')->get();
+
+        return $pvbs;
     }
 
     /**

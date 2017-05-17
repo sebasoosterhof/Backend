@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\cohort;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class CohortController extends Controller
 {
@@ -14,7 +16,9 @@ class CohortController extends Controller
      */
     public function index()
     {
-        //
+        $cohorts = DB:: table('cohorts')->get();
+
+        return $cohorts;
     }
 
     /**

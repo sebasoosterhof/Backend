@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\wpthbe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class WPTHBEController extends Controller
 {
@@ -14,7 +16,9 @@ class WPTHBEController extends Controller
      */
     public function index()
     {
-        //
+        $wpthbe = DB:: table('wpthbes')->get();
+
+        return $wpthbe;
     }
 
     /**

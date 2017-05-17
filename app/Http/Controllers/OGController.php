@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\og;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class OGController extends Controller
 {
@@ -14,7 +16,9 @@ class OGController extends Controller
      */
     public function index()
     {
-        //
+        $ogs = DB:: table('ogs')->get();
+
+        return $ogs;
     }
 
     /**

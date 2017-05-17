@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Http\Request;
 
 /*
@@ -16,3 +17,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::resource('users', 'UserController');
+Route::resource('students', 'StudentController');
+Route::resource('cohorts', 'CohortController');
+Route::resource('educations', 'EducationController');
+Route::resource('wpthbes', 'WPTHBEController');
+Route::resource('pvbs', 'PVBController');
+Route::resource('ogs', 'OGController');
+Route::resource('remarks', 'RemarkController');

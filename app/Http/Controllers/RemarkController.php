@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\remark;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class RemarkController extends Controller
 {
@@ -14,7 +16,9 @@ class RemarkController extends Controller
      */
     public function index()
     {
-        //
+        $remarks = DB:: table('remarks')->get();
+
+        return $remarks;
     }
     
 

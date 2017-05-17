@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Education;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class EducationController extends Controller
 {
@@ -14,7 +16,9 @@ class EducationController extends Controller
      */
     public function index()
     {
-        //
+        $educations = DB:: table('educations')->get();
+
+        return $educations;
     }
 
     /**
