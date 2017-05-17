@@ -14,7 +14,10 @@ class CreateOgsTable extends Migration
     public function up()
     {
         Schema::create('ogs', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('og_id');
+            $table->string('og_status');
+            $table->integer('og_status_id');
+            $table->datetime('og_requested_at');
             $table->timestamps();
         });
     }

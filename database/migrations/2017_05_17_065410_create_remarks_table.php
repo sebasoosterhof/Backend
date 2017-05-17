@@ -14,7 +14,11 @@ class CreateRemarksTable extends Migration
     public function up()
     {
         Schema::create('remarks', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('remarks_id');
+            $table->string('remarks_component');
+            $table->text('description');
+            $table->integer('remarks_author_id');
+            $table->datetime('remarks_created_at');
             $table->timestamps();
         });
     }

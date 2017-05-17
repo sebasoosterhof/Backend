@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWpthbesTable extends Migration
+class CreateEducationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateWpthbesTable extends Migration
      */
     public function up()
     {
-        Schema::create('wpthbes', function (Blueprint $table) {
-            $table->increments('wpthbe_id');
-            $table->string('wpthbe_description');
+        Schema::create('education', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('education_crebo');
+            $table->string('education_description');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateWpthbesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wpthbes');
+        Schema::dropIfExists('education');
     }
 }

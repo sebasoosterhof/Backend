@@ -14,7 +14,11 @@ class CreatePvbsTable extends Migration
     public function up()
     {
         Schema::create('pvbs', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('pvb_id');
+            $table->string('pvb_description');
+            $table->string('pvb_status');
+            $table->integer('pvb_status_id');
+            $table->datetime('pvb_requested_at');
             $table->timestamps();
         });
     }
