@@ -19,11 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('users', 'UserController');
-Route::resource('students', 'StudentController');
-Route::resource('cohorts', 'CohortController');
-Route::resource('educations', 'EducationController');
-Route::resource('wpthbes', 'WPTHBEController');
-Route::resource('pvbs', 'PVBController');
-Route::resource('ogs', 'OGController');
-Route::resource('remarks', 'RemarkController');
+Route::resource('users', 'UsersController');
+Route::resource('students', 'StudentsController');
+Route::resource('cohorts', 'CohortsController');
+Route::resource('educations', 'EducationsController');
+Route::resource('examcandidates', 'ExamCandidatesController');
+Route::resource('examlines', 'ExamLinesController');
+Route::resource('exams', 'ExamsController');
+Route::resource('remarks', 'RemarksController');
