@@ -18,7 +18,7 @@ class CreateRemarksTable extends Migration
             $table->string('component');
             $table->text('description');
             $table->integer('user_id');
-            $table->datetime('created_at');
+            // $table->datetime('created_at');
             $table->timestamps();
         });
     }
