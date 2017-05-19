@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\student;
+use App\Remarks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-
-class StudentController extends Controller
+class RemarksController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = DB:: table('students')->get();
+        $remarks = DB:: table('remarks')->get();
 
-        return $students;
+        return $remarks;
     }
 
     /**
@@ -45,10 +44,10 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\student  $student
+     * @param  \App\Remarks  $remarks
      * @return \Illuminate\Http\Response
      */
-    public function show(student $student)
+    public function show(Remarks $remarks)
     {
         //
     }
@@ -56,10 +55,10 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\student  $student
+     * @param  \App\Remarks  $remarks
      * @return \Illuminate\Http\Response
      */
-    public function edit(student $student)
+    public function edit(Remarks $remarks)
     {
         //
     }
@@ -68,10 +67,10 @@ class StudentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\student  $student
+     * @param  \App\Remarks  $remarks
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, student $student)
+    public function update(Request $request, Remarks $remarks)
     {
         //
     }
@@ -79,10 +78,10 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\student  $student
+     * @param  \App\Remarks  $remarks
      * @return \Illuminate\Http\Response
      */
-    public function destroy(student $student)
+    public function destroy(Remarks $remarks)
     {
         //
     }

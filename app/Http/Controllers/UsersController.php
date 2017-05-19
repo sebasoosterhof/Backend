@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\pvb;
+use App\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-
-class PVBController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class PVBController extends Controller
      */
     public function index()
     {
-        $pvbs = DB:: table('pvbs')->get();
+        $users = DB:: table('users')->get();
 
-        return $pvbs;
+        return $users;
     }
 
     /**
@@ -45,10 +44,10 @@ class PVBController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\pvb  $pvb
+     * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show(pvb $pvb)
+    public function show(Users $users)
     {
         //
     }
@@ -56,10 +55,10 @@ class PVBController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\pvb  $pvb
+     * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function edit(pvb $pvb)
+    public function edit(Users $users)
     {
         //
     }
@@ -68,10 +67,10 @@ class PVBController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\pvb  $pvb
+     * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, pvb $pvb)
+    public function update(Request $request, Users $users)
     {
         //
     }
@@ -79,10 +78,10 @@ class PVBController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\pvb  $pvb
+     * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pvb $pvb)
+    public function destroy(Users $users)
     {
         //
     }

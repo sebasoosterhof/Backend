@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\cohort;
+use App\ExamLines;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-
-class CohortController extends Controller
+class ExamLinesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class CohortController extends Controller
      */
     public function index()
     {
-        $cohorts = DB:: table('cohorts')->get();
+        $examLines = DB:: table('examlines')->get();
 
-        return $cohorts;
+        return $examLines;
     }
 
     /**
@@ -45,10 +44,10 @@ class CohortController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\cohort  $cohort
+     * @param  \App\ExamLines  $examLines
      * @return \Illuminate\Http\Response
      */
-    public function show(cohort $cohort)
+    public function show(ExamLines $examLines)
     {
         //
     }
@@ -56,10 +55,10 @@ class CohortController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\cohort  $cohort
+     * @param  \App\ExamLines  $examLines
      * @return \Illuminate\Http\Response
      */
-    public function edit(cohort $cohort)
+    public function edit(ExamLines $examLines)
     {
         //
     }
@@ -68,10 +67,10 @@ class CohortController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\cohort  $cohort
+     * @param  \App\ExamLines  $examLines
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, cohort $cohort)
+    public function update(Request $request, ExamLines $examLines)
     {
         //
     }
@@ -79,10 +78,10 @@ class CohortController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\cohort  $cohort
+     * @param  \App\ExamLines  $examLines
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cohort $cohort)
+    public function destroy(ExamLines $examLines)
     {
         //
     }

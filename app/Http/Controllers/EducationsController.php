@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\og;
+use App\Educations;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-
-class OGController extends Controller
+class EducationsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class OGController extends Controller
      */
     public function index()
     {
-        $ogs = DB:: table('ogs')->get();
+        $educations = DB:: table('educations')->get();
 
-        return $ogs;
+        return $educations;
     }
 
     /**
@@ -45,10 +44,10 @@ class OGController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\og  $og
+     * @param  \App\Educations  $educations
      * @return \Illuminate\Http\Response
      */
-    public function show(og $og)
+    public function show(Educations $educations)
     {
         //
     }
@@ -56,10 +55,10 @@ class OGController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\og  $og
+     * @param  \App\Educations  $educations
      * @return \Illuminate\Http\Response
      */
-    public function edit(og $og)
+    public function edit(Educations $educations)
     {
         //
     }
@@ -68,10 +67,10 @@ class OGController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\og  $og
+     * @param  \App\Educations  $educations
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, og $og)
+    public function update(Request $request, Educations $educations)
     {
         //
     }
@@ -79,10 +78,10 @@ class OGController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\og  $og
+     * @param  \App\Educations  $educations
      * @return \Illuminate\Http\Response
      */
-    public function destroy(og $og)
+    public function destroy(Educations $educations)
     {
         //
     }

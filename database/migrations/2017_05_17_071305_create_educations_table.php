@@ -13,9 +13,9 @@ class CreateEducationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('education', function (Blueprint $table) {
+        Schema::create('educations', function (Blueprint $table) {
             $table->increments('id');
-            $table->number('crebo');
+            $table->mediumInteger('crebo');
             $table->string('description');
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreateEducationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('education');
+        Schema::dropIfExists('educations');
     }
 }

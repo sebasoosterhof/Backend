@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class WPTHBE extends Model
+class Educations extends Model
 {
     //
 }

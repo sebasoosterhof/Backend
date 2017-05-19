@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\remark;
+use App\Students;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-
-class RemarkController extends Controller
+class StudentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +15,10 @@ class RemarkController extends Controller
      */
     public function index()
     {
-        $remarks = DB:: table('remarks')->get();
+        $students = DB:: table('students')->get();
 
-        return $remarks;
+        return $students;
     }
-    
 
     /**
      * Show the form for creating a new resource.
@@ -46,10 +44,10 @@ class RemarkController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\remark  $remark
+     * @param  \App\Students  $students
      * @return \Illuminate\Http\Response
      */
-    public function show(remark $remark)
+    public function show(Students $students)
     {
         //
     }
@@ -57,10 +55,10 @@ class RemarkController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\remark  $remark
+     * @param  \App\Students  $students
      * @return \Illuminate\Http\Response
      */
-    public function edit(remark $remark)
+    public function edit(Students $students)
     {
         //
     }
@@ -69,10 +67,10 @@ class RemarkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\remark  $remark
+     * @param  \App\Students  $students
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, remark $remark)
+    public function update(Request $request, Students $students)
     {
         //
     }
@@ -80,10 +78,10 @@ class RemarkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\remark  $remark
+     * @param  \App\Students  $students
      * @return \Illuminate\Http\Response
      */
-    public function destroy(remark $remark)
+    public function destroy(Students $students)
     {
         //
     }

@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\wpthbe;
+use App\ExamCandidates;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-
-class WPTHBEController extends Controller
+class ExamCandidatesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class WPTHBEController extends Controller
      */
     public function index()
     {
-        $wpthbe = DB:: table('wpthbes')->get();
+        $examCandidates = DB:: table('examcandidates')->get();
 
-        return $wpthbe;
+        return $examCandidates;
     }
 
     /**
@@ -45,10 +44,10 @@ class WPTHBEController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\wpthbe  $wpthbe
+     * @param  \App\ExamCandidates  $examCandidates
      * @return \Illuminate\Http\Response
      */
-    public function show(wpthbe $wpthbe)
+    public function show(ExamCandidates $examCandidates)
     {
         //
     }
@@ -56,10 +55,10 @@ class WPTHBEController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\wpthbe  $wpthbe
+     * @param  \App\ExamCandidates  $examCandidates
      * @return \Illuminate\Http\Response
      */
-    public function edit(wpthbe $wpthbe)
+    public function edit(ExamCandidates $examCandidates)
     {
         //
     }
@@ -68,10 +67,10 @@ class WPTHBEController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\wpthbe  $wpthbe
+     * @param  \App\ExamCandidates  $examCandidates
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, wpthbe $wpthbe)
+    public function update(Request $request, ExamCandidates $examCandidates)
     {
         //
     }
@@ -79,10 +78,10 @@ class WPTHBEController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\wpthbe  $wpthbe
+     * @param  \App\ExamCandidates  $examCandidates
      * @return \Illuminate\Http\Response
      */
-    public function destroy(wpthbe $wpthbe)
+    public function destroy(ExamCandidates $examCandidates)
     {
         //
     }

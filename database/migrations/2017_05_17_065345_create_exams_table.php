@@ -15,8 +15,8 @@ class CreateExamsTable extends Migration
     {
         Schema::create('exams', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('type');
-            $table->number('status');
+            $table->enum('type', array('wpthbe', 'pvb', 'og'));
+            $table->enum('status', array('undefined', 'yes', 'no', 'requested', 'planned', 'achieved', 'sliding-through', 'determination-list'));
             $table->string('description');
             $table->datetime('requested_at');
             $table->timestamps();

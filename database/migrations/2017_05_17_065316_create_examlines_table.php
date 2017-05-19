@@ -19,7 +19,7 @@ class CreateExamLinesTable extends Migration
             $table->integer('exam_id');
             $table->integer('cohort_id');
             $table->integer('remark_id');
-            $table->number('status');
+            $table->enum('status', array('exit', 'candidate', 'graduated'));
             $table->timestamps();
         });
     }

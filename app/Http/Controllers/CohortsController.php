@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Education;
+use App\Cohorts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-
-class EducationController extends Controller
+class CohortsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class EducationController extends Controller
      */
     public function index()
     {
-        $educations = DB:: table('educations')->get();
+        $cohorts = DB:: table('cohorts')->get();
 
-        return $educations;
+        return $cohorts;
     }
 
     /**
@@ -45,10 +44,10 @@ class EducationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Education  $education
+     * @param  \App\Cohorts  $cohorts
      * @return \Illuminate\Http\Response
      */
-    public function show(Education $education)
+    public function show(Cohorts $cohorts)
     {
         //
     }
@@ -56,10 +55,10 @@ class EducationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Education  $education
+     * @param  \App\Cohorts  $cohorts
      * @return \Illuminate\Http\Response
      */
-    public function edit(Education $education)
+    public function edit(Cohorts $cohorts)
     {
         //
     }
@@ -68,10 +67,10 @@ class EducationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Education  $education
+     * @param  \App\Cohorts  $cohorts
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Education $education)
+    public function update(Request $request, Cohorts $cohorts)
     {
         //
     }
@@ -79,10 +78,10 @@ class EducationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Education  $education
+     * @param  \App\Cohorts  $cohorts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Education $education)
+    public function destroy(Cohorts $cohorts)
     {
         //
     }
