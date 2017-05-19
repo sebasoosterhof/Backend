@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePvbsTable extends Migration
+class CreateExamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreatePvbsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pvbs', function (Blueprint $table) {
-            $table->increments('pvb_id');
-            $table->string('pvb_description');
-            $table->string('pvb_status');
-            $table->integer('pvb_status_id');
-            $table->datetime('pvb_requested_at');
+        Schema::create('exams', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('type');
+            $table->number('status');
+            $table->string('description');
+            $table->datetime('requested_at');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreatePvbsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pvbs');
+        Schema::dropIfExists('exams');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOgsTable extends Migration
+class CreateExamCandidatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateOgsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ogs', function (Blueprint $table) {
-            $table->increments('og_id');
-            $table->string('og_status');
-            $table->integer('og_status_id');
-            $table->datetime('og_requested_at');
+        Schema::create('examcandidates', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('student_id');
+            $table->integer('crebo_id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateOgsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ogs');
+        Schema::dropIfExists('examcandidates');
     }
 }
