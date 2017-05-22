@@ -15,8 +15,8 @@ class CreateExamCandidatesTable extends Migration
     {
         Schema::create('examcandidates', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('student_id');
-            $table->integer('crebo_id');
+            $table->integer('student_id')->references('id')->on('students');
+            $table->integer('crebo_id')->references('id')->on('educations');
             $table->timestamps();
         });
     }

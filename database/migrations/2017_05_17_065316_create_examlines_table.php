@@ -15,10 +15,10 @@ class CreateExamLinesTable extends Migration
     {
         Schema::create('examlines', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('examcandidate_id');
-            $table->integer('exam_id');
-            $table->integer('cohort_id');
-            $table->integer('remark_id');
+            $table->integer('examcandidate_id')->references('id')->on('examcandidates');
+            $table->integer('exam_id')->references('id')->on('exams');
+            $table->integer('cohort_id')->references('id')->on('cohorts');
+            $table->integer('remark_id')->references('id')->on('remarks');
             $table->enum('status', array('exit', 'candidate', 'graduated'));
             $table->timestamps();
         });
