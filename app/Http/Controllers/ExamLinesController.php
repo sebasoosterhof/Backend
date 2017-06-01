@@ -33,6 +33,7 @@ class ExamLinesController extends Controller
                      'students.firstname as firstname',
                      'students.lastname as lastname',
                      'students.studentnumber as studentnumber',
+                     'educations.id as crebo_id',
                      'educations.crebo as crebo',
                      'educations.description as education',
                      'exams.type as exams_type', 
