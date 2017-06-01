@@ -6,6 +6,8 @@ use App\Remarks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+header('Access-Control-Allow-Origin: *');
+
 class RemarksController extends Controller
 {
     /**
@@ -15,7 +17,17 @@ class RemarksController extends Controller
      */
     public function index()
     {
-        $remarks = DB:: table('remarks')->get();
+        $remarks =  DB::table('remarks')
+            ->join('users', 'remarks.user_id', '=', 'users.id')
+
+            ->select('remarks.id', 
+                     'users.firstname as user_firstname',
+                     'users.lastname as user_lastname',
+                     'remarks.component',
+                     'remarks.description',
+                     'remarks.created_at'
+                     )
+            ->get();
 
         return $remarks;
     }

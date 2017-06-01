@@ -6,6 +6,8 @@ use App\ExamCandidates;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+header('Access-Control-Allow-Origin: *');
+
 class ExamCandidatesController extends Controller
 {
     /**
@@ -15,7 +17,11 @@ class ExamCandidatesController extends Controller
      */
     public function index()
     {
-        $examCandidates = DB:: table('examcandidates')->get();
+       $examCandidates =  DB::table('examcandidates')
+            ->join('students', 'examcandidates.student_id', '=', 'students.id')
+            ->join('educations', 'examcandidates.crebo_id', '=', 'educations.id')
+            ->select('examcandidates.id', 'students.firstname', 'students.lastname', 'students.studentnumber', 'educations.crebo', 'educations.description')
+            ->get();
 
         return $examCandidates;
     }
