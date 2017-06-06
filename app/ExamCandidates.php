@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class ExamCandidates extends Model
 {
     public function students() {
-        return $this->belongsTo('App\Students');
+        return $this->belongsTo('App\Students', 'student_id');
     }
 
     public function educations() {
-        return $this->belongsTo('App\Educations');
+        return $this->belongsTo('App\Educations', 'crebo_id');
     }
 }

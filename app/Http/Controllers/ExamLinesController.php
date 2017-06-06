@@ -1,12 +1,14 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\ExamLines;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+use Request;
 use Illuminate\Support\Facades\DB;
 
 header('Access-Control-Allow-Origin: *');
+// header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+// header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 
 class ExamLinesController extends Controller
 {
@@ -48,6 +50,7 @@ class ExamLinesController extends Controller
                      'users.lastname as remark_user_lastname',
                      'examlines.status as status'
                      )
+                ->orderBy('id', 'asc')
             ->get();
 
         return $examLines;
@@ -69,10 +72,10 @@ class ExamLinesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    // public function store(Request $request)
+    // {
+    //     //
+    // }
 
     /**
      * Display the specified resource.
@@ -80,7 +83,7 @@ class ExamLinesController extends Controller
      * @param  \App\ExamLines  $examLines
      * @return \Illuminate\Http\Response
      */
-    public function show(ExamLines $examLines)
+    public function show(Request $request, ExamLines $examLines)
     {
         //
     }
@@ -105,8 +108,46 @@ class ExamLinesController extends Controller
      */
     public function update(Request $request, ExamLines $examLines)
     {
-        //
+        $candidate = $request::all();
+        $id = $request::input('id');
+        // $examcandidate_id = $request::input('examcandidate_id');
+        // $crebo_id = $request::input('crebo_id');
+        // $crebo = $request::input('crebo');
+        // $education = $request::input('education');
+        $status = $request::input('status');
+
+        var_dump($candidate);
+        echo $id;
+        // echo $crebo_id;
+        // echo $crebo;
+        // echo $education;
+        echo $status;
+
+        // DB::table('examlines')
+        //     ->where('id', '=', $id)
+        //     // ->update(array('crebo_id' => $crebo_id))            
+        //     // ->update(array('crebo' => $crebo))
+        //     // ->update(array('education' => $education))
+        //     ->update(array('status' => $status));
+
+        // DB::table('examlines')
+        //     ->where('id', '=', $id)
+        //     ->update(array('status' => $status));
+
+        examlines::where('id', '=', $id)->update(array('status' => $status));
+
+
+        // if ($status === 'candidate') {
+        //   examLines::where('id', $id)->update(array('status' => 'candidate'));
+        // }
+        // if ($status === 'exit') {
+        //   examLines::where('id', $id)->update(array('status' => 'exit'));
+        // }
+
+
+        // return $examLine;
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -114,7 +155,7 @@ class ExamLinesController extends Controller
      * @param  \App\ExamLines  $examLines
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ExamLines $examLines)
+    public function delete(ExamLines $examLines)
     {
         //
     }
