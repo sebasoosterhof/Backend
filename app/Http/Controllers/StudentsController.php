@@ -6,7 +6,7 @@ use App\Students;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-header('Access-Control-Allow-Origin: *');
+// header('Access-Control-Allow-Origin: *');
 
 class StudentsController extends Controller
 {

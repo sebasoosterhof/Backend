@@ -6,7 +6,7 @@ use App\ExamCandidates;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-header('Access-Control-Allow-Origin: *');
+// header('Access-Control-Allow-Origin: *');
 
 class ExamCandidatesController extends Controller
 {
