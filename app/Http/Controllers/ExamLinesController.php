@@ -2,13 +2,14 @@
 namespace App\Http\Controllers;
 
 use App\ExamLines;
+use App\ExamCandidates;
 // use Illuminate\Http\Request;
 use Request;
 use Illuminate\Support\Facades\DB;
 
 // header('Access-Control-Allow-Origin: *');
 // header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
+// header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 
 class ExamLinesController extends Controller
 {
@@ -106,21 +107,22 @@ class ExamLinesController extends Controller
      * @param  \App\ExamLines  $examLines
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ExamLines $examLines)
+    public function update(Request $request, ExamLines $examLines, ExamCandidates $examCandidates)
     {
         $candidate = $request::all();
         $id = $request::input('id');
-        // $examcandidate_id = $request::input('examcandidate_id');
-        // $crebo_id = $request::input('crebo_id');
-        // $crebo = $request::input('crebo');
-        // $education = $request::input('education');
+        $examcandidates_id = $request::input('examcandidates_id');
+        $crebo_id = $request::input('crebo_id');
+        $crebo = $request::input('crebo');
+        $education = $request::input('education');
         $status = $request::input('status');
 
         var_dump($candidate);
         echo $id;
-        // echo $crebo_id;
-        // echo $crebo;
-        // echo $education;
+        echo $examcandidates_id;
+        echo $crebo_id; 
+        echo $crebo;
+        echo $education;
         echo $status;
 
         // DB::table('examlines')
@@ -130,20 +132,11 @@ class ExamLinesController extends Controller
         //     // ->update(array('education' => $education))
         //     ->update(array('status' => $status));
 
-        // DB::table('examlines')
-        //     ->where('id', '=', $id)
-        //     ->update(array('status' => $status));
+        ExamLines::where('id', '=', $id)
+            ->update(array('status' => $status));   
 
-        examlines::where('id', '=', $id)->update(array('status' => $status));
-
-
-        // if ($status === 'candidate') {
-        //   examLines::where('id', $id)->update(array('status' => 'candidate'));
-        // }
-        // if ($status === 'exit') {
-        //   examLines::where('id', $id)->update(array('status' => 'exit'));
-        // }
-
+        ExamCandidates::where('id', '=', $examcandidates_id)
+            ->update(array('crebo_id' => $crebo_id));
 
         // return $examLine;
     }

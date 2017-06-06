@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ExamLines extends Model
 {
     public $table = "examlines";
+    
     // public function users() {
     //     return $this->belongsto('App\Users');
     // }
