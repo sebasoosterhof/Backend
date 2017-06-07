@@ -3,13 +3,8 @@ namespace App\Http\Controllers;
 
 use App\ExamLines;
 use App\ExamCandidates;
-// use Illuminate\Http\Request;
 use Request;
 use Illuminate\Support\Facades\DB;
-
-// header('Access-Control-Allow-Origin: *');
-// header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-// header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 
 class ExamLinesController extends Controller
 {
@@ -39,6 +34,7 @@ class ExamLinesController extends Controller
                      'educations.id as crebo_id',
                      'educations.crebo as crebo',
                      'educations.description as education',
+                     'exams.id as exam_id', 
                      'exams.type as exams_type', 
                      'exams.description as exams_description', 
                      'cohorts.year as cohort', 
@@ -109,7 +105,7 @@ class ExamLinesController extends Controller
      */
     public function update(Request $request, ExamLines $examLines, ExamCandidates $examCandidates)
     {
-        $candidate = $request::all();
+        $examLine = $request::all();
         $id = $request::input('id');
         $examcandidates_id = $request::input('examcandidates_id');
         $crebo_id = $request::input('crebo_id');
@@ -117,20 +113,13 @@ class ExamLinesController extends Controller
         $education = $request::input('education');
         $status = $request::input('status');
 
-        var_dump($candidate);
+        var_dump($examLine);
         echo $id;
         echo $examcandidates_id;
         echo $crebo_id; 
         echo $crebo;
         echo $education;
         echo $status;
-
-        // DB::table('examlines')
-        //     ->where('id', '=', $id)
-        //     // ->update(array('crebo_id' => $crebo_id))            
-        //     // ->update(array('crebo' => $crebo))
-        //     // ->update(array('education' => $education))
-        //     ->update(array('status' => $status));
 
         ExamLines::where('id', '=', $id)
             ->update(array('status' => $status));   

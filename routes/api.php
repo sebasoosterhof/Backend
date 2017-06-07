@@ -18,18 +18,29 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Users
 Route::resource('users', 'UsersController');
-Route::resource('students', 'StudentsController');
+
+// Students
+Route::get('students', 'StudentsController@index');
+Route::post('students', 'StudentsController@store');
+
+// Cohorts
 Route::resource('cohorts', 'CohortsController');
+
+// Educations
 Route::resource('educations', 'EducationsController');
-Route::resource('examcandidates', 'ExamCandidatesController');
 
-// Route::get('examlines', 'ExamLinesController@index');
-Route::resource('examlines', 'ExamLinesController', ['only' => [
-    'index', 'update'
-]]);
-Route::post('examlines/update/{candidate}', 'ExamLinesController@update');
-// Route::get('examlines/show', 'ExamLinesController@show');
+// ExamCandidates
+Route::get('examcandidates', 'ExamCandidatesController@index');
+Route::put('examcandidates/store/{examcandidate}', 'ExamCandidatesController@store');
 
+// ExamLines
+Route::get('examlines', 'ExamLinesController@index');
+Route::post('examlines/update/{examline}', 'ExamLinesController@update');
+
+// Exams
 Route::resource('exams', 'ExamsController');
+
+// Remarks
 Route::resource('remarks', 'RemarksController');

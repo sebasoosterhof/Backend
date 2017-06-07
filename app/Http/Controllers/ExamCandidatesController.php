@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\ExamCandidates;
-use Illuminate\Http\Request;
+use App\Students;
+use App\Educations;
+use App\ExamLines;
+use Request;
 use Illuminate\Support\Facades\DB;
-
-// header('Access-Control-Allow-Origin: *');
 
 class ExamCandidatesController extends Controller
 {
@@ -44,7 +45,44 @@ class ExamCandidatesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $examCandidate = $request::all();
+        // $id = $request::input('id');
+        $firstname = $request::input('firstname');
+        $lastname = $request::input('lastname');
+        $studentnumber = $request::input('studentnumber');
+        $education = $request::input('education');
+        $crebo_id = $request::input('crebo_id');
+        $crebo = $request::input('crebo');
+        $cohort = $request::input('cohort');
+
+
+        var_dump($examCandidate);
+        // echo $id;
+        echo $firstname;
+        echo $lastname;
+        echo $studentnumber;
+        echo $education;
+        echo $crebo_id;
+        echo $crebo;
+        echo $cohort;
+
+        $student = new Students;
+        $student->firstname = $firstname;
+        $student->lastname = $lastname;
+        $student->studentnumber = $studentnumber;
+        $student->save();
+
+        $examCandidate = new ExamCandidates;
+        $examCandidate->student_id = $student->id;
+        $examCandidate->crebo_id = $crebo_id;
+        $examCandidate->save();
+
+        $examLine = new ExamLines;
+        $examLine->examcandidate_id = $examCandidate->id;
+        $examLine->cohort_id = 3;
+        $examLine->remark_id = 1;
+        $examLine->exam_id = 1;
+        $examLine->save();       
     }
 
     /**
