@@ -137,8 +137,12 @@ class ExamLinesController extends Controller
      * @param  \App\ExamLines  $examLines
      * @return \Illuminate\Http\Response
      */
-    public function delete(ExamLines $examLines)
+    public function delete(Request $request, ExamLines $examLines)
     {
-        //
+        $examLine = $request::all();
+        $id = $request::input('id');
+        echo $id;
+        ExamLines::where('id', '=', $id)
+            ->delete();
     }
 }

@@ -38,6 +38,7 @@ Route::put('examcandidates/store/{examcandidate}', 'ExamCandidatesController@sto
 // ExamLines
 Route::get('examlines', 'ExamLinesController@index');
 Route::post('examlines/update/{examline}', 'ExamLinesController@update');
+Route::delete('examlines/delete/{examline}', 'ExamLinesController@delete');
 
 // Exams
 Route::resource('exams', 'ExamsController');

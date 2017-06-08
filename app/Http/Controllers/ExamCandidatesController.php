@@ -46,7 +46,6 @@ class ExamCandidatesController extends Controller
     public function store(Request $request)
     {
         $examCandidate = $request::all();
-        // $id = $request::input('id');
         $firstname = $request::input('firstname');
         $lastname = $request::input('lastname');
         $studentnumber = $request::input('studentnumber');
@@ -57,7 +56,6 @@ class ExamCandidatesController extends Controller
 
 
         var_dump($examCandidate);
-        // echo $id;
         echo $firstname;
         echo $lastname;
         echo $studentnumber;
@@ -82,6 +80,7 @@ class ExamCandidatesController extends Controller
         $examLine->cohort_id = 3;
         $examLine->remark_id = 1;
         $examLine->exam_id = 1;
+        $examLine->status = 'candidate';
         $examLine->save();       
     }
 
