@@ -126,8 +126,6 @@ class ExamLinesController extends Controller
 
         ExamCandidates::where('id', '=', $examcandidates_id)
             ->update(array('crebo_id' => $crebo_id));
-
-        // return $examLine;
     }
 
 
